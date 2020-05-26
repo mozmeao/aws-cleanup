@@ -1,0 +1,12 @@
+stages:
+  - run
+
+run:
+  stage: run
+  tags:
+    - mozmeao
+    - aws
+  script:
+    - ./cleanup.sh -f
+  only:
+    - schedules
