@@ -8,5 +8,6 @@ run:
     - aws
   script:
     - ./cleanup.sh -f
+    - curl "${DMS_URL}"
   only:
     - schedules
