@@ -3,7 +3,7 @@ set -euo pipefail
 
 OWNER=$(aws sts get-caller-identity | jq -r .Account)
 CUTOFF_DATE=$(date +%Y-%m-%d --date="-30 days")
-REGIONS=$(aws ec2 describe-regions | jq -r .Regions[].RegionName)
+REGIONS=$(aws ec2 describe-regions --region us-west-2 | jq -r .Regions[].RegionName)
 DRY_RUN=true
 
 total_snapshots_removed=0

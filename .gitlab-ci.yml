@@ -7,7 +7,7 @@ run:
     - mozmeao
     - aws
   script:
-    - ./cleanup.sh -f
+    - ./cleanup.sh "${FORCE}"
     - curl "${DMS_URL}"
   only:
     - schedules
