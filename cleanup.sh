@@ -48,7 +48,7 @@ done
 MSG=" ➤ Deleted ${total_snapshots_removed} snapshots, saved ${total_snapshots_size} GB"
 echo ${MSG}
 
-if [ "${DRY_RUN}" = false ] && [ -n "${SLACK_TOKEN:-}" ] && \
+if [ "${DRY_RUN}" = false ] && \
     [ -n "${SLACK_CHANNEL:-}" ] && [ "${total_snapshots_removed}" -ne "0" ]
 then
     echo "Sending to Slack channel ${SLACK_CHANNEL}"
