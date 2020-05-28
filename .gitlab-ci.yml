@@ -1,0 +1,13 @@
+stages:
+  - run
+
+run:
+  stage: run
+  tags:
+    - mozmeao
+    - aws
+  script:
+    - ./cleanup.sh -f
+    - curl "${DMS_URL}"
+  only:
+    - schedules
