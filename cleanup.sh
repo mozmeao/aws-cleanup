@@ -52,5 +52,5 @@ if [ "${DRY_RUN}" = false ] && \
     [ -n "${SLACK_CHANNEL:-}" ] && [ "${total_snapshots_removed}" -ne "0" ]
 then
     echo "Sending to Slack channel ${SLACK_CHANNEL}"
-    slack-cli -t ${SLACK_TOKEN} -d "${SLACK_CHANNEL}" "${MSG}"
+    slack-cli -d "${SLACK_CHANNEL}" "${MSG}"
 fi
